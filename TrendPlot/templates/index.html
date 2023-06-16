@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <script src="../static/chart.umd.js"></script>
+    <script src="../static/bootstrap.bundle.min.js"></script>
+    <script src="../static/socket.io.min.js"></script>
+    <script src="../static/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="../static/chartjs-plugin-zoom.min.js"></script>
+    <title>Logix Web Trend</title>
+</head>
+
+<body>
+    <div class="full-page-container">
+        <div class="left-side">
+            <div class="controls-box">
+                <div class="form-group">
+                    <div class="btn-group-vertical gap-0 d-flex">
+                        <button id="connectButton" type="button" class="btn btn-primary">Connect</button>
+                        <button id="startButton" type="button" class="btn btn-success" disabled>Start</button>
+                        <button id="stopButton" type="button" class="btn btn-warning" disabled>Stop</button>
+                        <button id="resetButton" type="button" class="btn btn-danger" disabled>Reset</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-sm mb-0">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">IP Address</span>
+                        </div>
+                        <input type="text" class="form-control" id="ipAddress" value="192.168.123.100">
+                    </div>
+                    <div class="input-group input-group-sm mb-0">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">PLC Slot</span>
+                        </div>
+                        <input type="text" class="form-control" id="plcSlot" value="2">
+                    </div>
+                    <div class="input-group input-group-sm mb-0">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Interval (s)</span>
+                        </div>
+                        <input type="text" class="form-control" id="rate" value="0.1">
+                    </div>
+                    <div class="input-group input-group-sm mb-0">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Duration (s)</span>
+                        </div>
+                        <input type="text" class="form-control" id="duration" value="300">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="text-primary" id="statusBar"></p>
+            </div>
+            <hr>
+            <div class="plc-tags-box">
+                <div class="table-container">
+                    <table class="tags-table">
+                        <thead>
+                            <tr>
+                                <th>Tag Name</th>
+                                <th>Value</th>
+                                <th>Data Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tagTableBody">
+                            <tr>
+                                <td><input type="text" class="form-control" name="tagName" value="myDint"
+                                        list="baseTagList"></td>
+                                <td><input type="text" class="form-control" name="tagValue" readonly disabled></td>
+                                <td><input type="text" class="form-control" name="tagDataType" readonly disabled></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" id="addTagButton">Add Tag</button>
+                    <button class="btn btn-primary" id="removeTagButton" disabled>Remove Last Row</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <canvas id="chartCanvas"></canvas>
+        </div>
+    </div>
+    <datalist id="baseTagList"></datalist>
+    <script src="../static/script.js"></script>
+</body>
+
+</html>

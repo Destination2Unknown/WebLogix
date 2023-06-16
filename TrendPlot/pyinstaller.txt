@@ -1,0 +1,1 @@
+pyinstaller --clean -F --noconsole --add-data "templates;templates" --add-data "static;static" LogixWebTrend.pyw
