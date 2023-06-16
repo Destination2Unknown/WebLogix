@@ -4,6 +4,9 @@
 Watch Window
 
 
+https://github.com/Destination2Unknown/WebLogix/assets/92536730/5dbb8a12-4653-488c-9609-deac61c933e0
+
+
 ---
 
 Trend Plot
