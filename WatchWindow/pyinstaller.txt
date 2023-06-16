@@ -1,1 +1,1 @@
-pyinstaller --clean -F --noconsole --add-data "templates;templates" --add-data "static;static" LogixWebWatch.pyw
+pyinstaller --clean -F --noconsole --add-data "templates;templates" --add-data "static;static" --icon=static\favicon.ico LogixWebWatch.pyw
