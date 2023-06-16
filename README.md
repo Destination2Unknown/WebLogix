@@ -6,7 +6,11 @@ Watch Window
 
 ---
 
-Trend
+Trend Plot
+
+
+https://github.com/Destination2Unknown/WebLogix/assets/92536730/a40ea145-67c2-488f-ae33-1ef33df8adcb
+
 
 
 ----
